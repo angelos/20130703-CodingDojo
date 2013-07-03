@@ -23,12 +23,16 @@ function answerSquareAndCube(question) {
     var left = parseInt(match[1]);
     var right = parseInt(match[2]);
 
+    function isAPower(n, base) {
+    	return Math.pow(Math.ceil(Math.pow(n, 1/base)), base) == n
+    }
+
     function isCube(n) {
-    	return Math.pow(Math.ceil(Math.pow(n, 1/3)), 3) == n
+    	return isAPower(n, 3);
     }
 
     function isSquare(n) {
-    	return Math.pow(Math.ceil(Math.pow(n, 1/2)), 2) == n
+    	return isAPower(n, 2);
     }
 
     var result = [];
