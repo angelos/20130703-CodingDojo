@@ -1,6 +1,7 @@
 var http = require('http');
 
 var addingPattern = /what is (\d+) plus (\d+)/
+var minusPattern = /what is (\d+) minus (\d+)/
 var multipliedPattern = /what is (\d+) multiplied by (\d+)/
 var largestPattern = /which of the following numbers is the largest: (\d+), (\d+)/
 var squareAndCubePattern = /which of the following numbers is both a square and a cube: (\d+), (\d+)/
@@ -10,6 +11,13 @@ function answerAdding(question) {
     var left = parseInt(match[1]);
     var right = parseInt(match[2]);
     return left + right;
+}
+
+function answerMinus(question) {
+    var match = minusPattern.exec(question);
+    var left = parseInt(match[1]);
+    var right = parseInt(match[2]);
+    return left - right;
 }
 
 function answerMultiplied(question) {
@@ -59,6 +67,9 @@ function handleQuestion(question) {
 	if (addingPattern.test(question)) {
 		return answerAdding(question);
 	}
+    if (minusPattern.test(question)) {
+        return answerMinus(question);
+    }
 	if (multipliedPattern.test(question)) {
 		return answerMultiplied(question);
 	}
