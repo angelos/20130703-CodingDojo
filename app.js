@@ -93,6 +93,7 @@ function handleQuestion(question) {
     if (fibonacciPattern.test(question)) {
         return answerFibonacci(question);
     }
+    return "I know nothin', I'm from Barcelona";
 }
 
 var server = http.createServer(function(request, response) {
