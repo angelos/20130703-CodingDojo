@@ -13,5 +13,8 @@
   "author": "Luminis Arnhem",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "gitHead": "9f1ba41c90b3c7b11b23bbdd3fcca1cedd0a2034"
+  "gitHead": "9f1ba41c90b3c7b11b23bbdd3fcca1cedd0a2034",
+  "devDependencies": {
+    "nodemon": "~0.7.8"
+  }
 }
