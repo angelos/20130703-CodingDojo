@@ -1,9 +1,12 @@
-var assert = require("assert")
-describe('Array', function(){
-  describe('#indexOf()', function(){
-    it('should return -1 when the value is not present', function(){
-      assert.equal(-1, [1,2,3].indexOf(5));
-      assert.equal(-1, [1,2,3].indexOf(0));
-    })
-  })
+var assert = require("assert");
+var oracle = require("../lib/answers");
+
+describe('oracle', function(){
+	it('should answer what is the 6nd number in the Fibonacci sequence', function(){
+		assert.equal(8, oracle.answer("what is the 6nd number in the Fibonacci sequence"));
+	})
+
+	it('should answer which of the following numbers is both a square and a cube: 4096, 4095', function(){
+		assert.equal(4096, oracle.answer("which of the following numbers is both a square and a cube: 4096, 4095"));
+	})
 })
