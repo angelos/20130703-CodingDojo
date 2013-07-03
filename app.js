@@ -3,6 +3,7 @@ var http = require('http');
 var addingPattern = /what is (\d+) plus (\d+)/
 var minusPattern = /what is (\d+) minus (\d+)/
 var multipliedPattern = /what is (\d+) multiplied by (\d+)/
+var fibonacciPattern = /what is the (\d+).. number in the Fibonacci sequence/
 var largestPattern = /which of the following numbers is the largest: (\d+), (\d+)/
 var squareAndCubePattern = /which of the following numbers is both a square and a cube: (\d+), (\d+)/
 
@@ -63,6 +64,16 @@ function answerSquareAndCube(question) {
     return result;
 }
 
+function answerFibonacci(question) {
+    var match = fibonacciPattern.exec(question);
+    var n = match[1];
+
+    var phi = (1 + Math.sqrt(5))/2;
+    var psi = (1 - Math.sqrt(5))/2;
+    function fib(n) { return (Math.pow(phi, n) - Math.pow(psi, n)) / (phi - psi) }
+    return fib(n);
+}
+
 function handleQuestion(question) {
 	if (addingPattern.test(question)) {
 		return answerAdding(question);
@@ -79,6 +90,9 @@ function handleQuestion(question) {
 	if (squareAndCubePattern.test(question)) {
 		return answerSquareAndCube(question);
 	}
+    if (fibonacciPattern.test(question)) {
+        return answerFibonacci(question);
+    }
 }
 
 var server = http.createServer(function(request, response) {
