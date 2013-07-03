@@ -1,0 +1,17 @@
+{
+  "name": "xstream",
+  "version": "0.0.0",
+  "description": "The winning solution",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "winning"
+  ],
+  "author": "Luminis Arnhem",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "9f1ba41c90b3c7b11b23bbdd3fcca1cedd0a2034"
+}
